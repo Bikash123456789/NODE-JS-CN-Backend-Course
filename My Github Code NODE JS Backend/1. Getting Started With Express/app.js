@@ -1,11 +1,24 @@
 const express = require("express");
 
-const server = express()
+const app = express()
 
-server.get("/",(req,res)=>{
-    res.send("Hello Bikash!!!")
+//Middleware1
+app.get("/",(req,res,next)=>{
+    console.log("Hello from middleware1")
+    next()
 })
 
-server.listen(5000,()=>{
+//Middleware2
+app.get("/",(req,res,next)=>{
+    console.log("Hello from middleware2")
+    next()
+})
+
+//Middleware3
+app.get("/",(req,res,next)=>{
+    res.send("Ending response from middleware3")
+})
+
+app.listen(5000,()=>{
     console.log("Server is listening at port 5000")
 })
