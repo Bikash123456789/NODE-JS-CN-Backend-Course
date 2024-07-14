@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import expressLayouts from "express-ejs-layouts"
 import ProductsController from './src/controllers/products.controller.js';
+import validateRequest from './src/middlewares/product.middleware.js';
 
 const server = express()
 
@@ -20,7 +21,7 @@ server.use(express.static('src/views')) // Check at http://localhost:3400/produc
 
 server.get("/",productController.getProducts)
 server.get("/new",productController.getAddForm)
-server.post("/",productController.postAddProduct)
+server.post("/", validateRequest,productController.postAddProduct)
 
 
 server.listen(3400,()=>{

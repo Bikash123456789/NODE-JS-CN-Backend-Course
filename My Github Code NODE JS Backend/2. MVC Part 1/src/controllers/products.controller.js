@@ -10,13 +10,18 @@ export default class ProductsController {
     }
 
     getAddForm(req,res){
-        res.render('new-product')
+        res.render('new-product',{errorMsg:null})
     }
 
     postAddProduct(req,res){
         console.log(req.body)
+        
+    
         ProductModel.addProduct(req.body)
         let products = ProductModel.getAllProducts()
         res.render('products',{products:products})
+        
+
+        
     }
 }
