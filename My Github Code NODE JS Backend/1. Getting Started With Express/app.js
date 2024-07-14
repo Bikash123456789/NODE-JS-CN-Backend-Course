@@ -19,7 +19,9 @@ app.put('/', (req, res) => {
 app.delete('/', (req, res) => {
     res.send('DELETE request received')
     });  
-    
+
+
+app.use(express.static('public'))
     
 
 app.listen(5000,()=>{
