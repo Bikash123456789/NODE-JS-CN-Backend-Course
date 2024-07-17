@@ -15,6 +15,20 @@ export default class ProductModel {
         let newProduct = new ProductModel(products.length+1,pObj.name,pObj.desc,pObj.price,pObj.imageUrl)
         products.push(newProduct)
     }
+
+    static getById(id){
+        return products.find((p)=>p.id == id);
+    }
+
+    static update(pObj){
+        const index = products.findIndex((p)=>p.id == pObj.id)
+        products[index] = pObj
+    }
+
+    static delete(id){
+        const index = products.findIndex((p)=>p.id==id)
+        products.splice(index,1)
+    }
 }
 
 var products = [

@@ -22,6 +22,16 @@ server.use(express.static('src/views')) // Check at http://localhost:3400/produc
 server.get("/",productController.getProducts)
 server.get("/new",productController.getAddForm)
 server.post("/", validateRequest,productController.postAddProduct)
+server.get("/update-product/:id",productController.getUpdateProductView)
+server.get("/update-product/:id",productController.getUpdateProductView)
+server.post(
+    '/update-product',
+    productController.postUpdateProduct
+  );
+  server.get(
+    '/delete-product/:id',
+    productController.deleteProduct
+  );
 
 
 server.listen(3400,()=>{
