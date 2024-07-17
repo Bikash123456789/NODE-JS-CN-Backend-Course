@@ -17,7 +17,7 @@ server.use(expressLayouts);
 //instance of ProductsController
 const productController = new ProductsController()
 
-server.use(express.static('src/views')) // Check at http://localhost:3400/products.html
+server.use(express.static('public')) // Check at http://localhost:3400/products.html
 
 server.get("/",productController.getProducts)
 server.get("/new",productController.getAddForm)
@@ -28,7 +28,7 @@ server.post(
     '/update-product',
     productController.postUpdateProduct
   );
-  server.get(
+  server.post(
     '/delete-product/:id',
     productController.deleteProduct
   );
