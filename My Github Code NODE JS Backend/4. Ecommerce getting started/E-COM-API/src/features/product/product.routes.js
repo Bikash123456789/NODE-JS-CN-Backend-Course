@@ -11,7 +11,7 @@ const productController = new ProductController();
 // Handle the Routes
 router.get("/", productController.getAllProducts);
 router.post("/", upload.single("imageUrl"), productController.addProduct);
-// router.get("/:id", productController.getOneProduct);
+router.get("/:id", productController.getOneProduct);
 // router.post("/rate", productController.rateProduct);
 
 export default router;
