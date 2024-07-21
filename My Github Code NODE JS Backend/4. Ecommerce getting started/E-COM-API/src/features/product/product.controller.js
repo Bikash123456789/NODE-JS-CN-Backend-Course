@@ -1,18 +1,21 @@
+import ProductModel from "./product.model.js";
+
 export default class ProductController {
-  getAllProducts(request, response) {
+  getAllProducts(req, res) {
     // Code for getting all products
-    response.send("Get all Products");
+    const products = ProductModel.GetAll();
+    res.status(200).send(products);
   }
 
-  addProduct(request, response) {
+  addProduct(req, res) {
     // Code for adding a product
   }
 
-  rateProduct(request, response) {
+  rateProduct(req, res) {
     // Code for rating a product
   }
 
-  getOneProduct(request, response) {
+  getOneProduct(req, res) {
     // Code for getting one product
   }
 }

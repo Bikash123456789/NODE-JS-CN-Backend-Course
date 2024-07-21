@@ -6,6 +6,8 @@ import ProductRoutes from "./src/features/product/product.routes.js";
 const server = express();
 
 // 3. Handle Routes for Products
+// for all requests related to product, redirect to product routes.
+// localhost:3200/api/products
 server.use("/api/products", ProductRoutes);
 
 // 4. Specify Port
