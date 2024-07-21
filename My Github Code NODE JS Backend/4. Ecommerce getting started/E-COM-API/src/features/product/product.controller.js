@@ -9,6 +9,9 @@ export default class ProductController {
 
   addProduct(req, res) {
     // Code for adding a product
+    console.log(req.body);
+    console.log("Post Request Received");
+    res.end();
   }
 
   rateProduct(req, res) {
